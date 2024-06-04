@@ -6,31 +6,28 @@ import warnings
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import solidpy_test_pb2 as solidpy__test__pb2
 
-GRPC_GENERATED_VERSION = "1.64.1"
+GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
-EXPECTED_ERROR_RELEASE = "1.65.0"
-SCHEDULED_RELEASE_DATE = "June 25, 2024"
+EXPECTED_ERROR_RELEASE = '1.65.0'
+SCHEDULED_RELEASE_DATE = 'June 25, 2024'
 _version_not_supported = False
 
 try:
     from grpc._utilities import first_version_is_lower
-
-    _version_not_supported = first_version_is_lower(
-        GRPC_VERSION, GRPC_GENERATED_VERSION
-    )
+    _version_not_supported = first_version_is_lower(GRPC_VERSION, GRPC_GENERATED_VERSION)
 except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
     warnings.warn(
-        f"The grpc package installed is at version {GRPC_VERSION},"
-        + f" but the generated code in solidpy_test_pb2_grpc.py depends on"
-        + f" grpcio>={GRPC_GENERATED_VERSION}."
-        + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
-        + f" or downgrade your generated code using grpcio-tools<={GRPC_VERSION}."
-        + f" This warning will become an error in {EXPECTED_ERROR_RELEASE},"
-        + f" scheduled for release on {SCHEDULED_RELEASE_DATE}.",
-        RuntimeWarning,
+        f'The grpc package installed is at version {GRPC_VERSION},'
+        + f' but the generated code in solidpy_test_pb2_grpc.py depends on'
+        + f' grpcio>={GRPC_GENERATED_VERSION}.'
+        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
+        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
+        + f' This warning will become an error in {EXPECTED_ERROR_RELEASE},'
+        + f' scheduled for release on {SCHEDULED_RELEASE_DATE}.',
+        RuntimeWarning
     )
 
 
@@ -44,35 +41,30 @@ class SolidPyTestStub(object):
             channel: A grpc.Channel.
         """
         self.GetPerson = channel.unary_unary(
-            "/solidpy_test.SolidPyTest/GetPerson",
-            request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-            response_deserializer=solidpy__test__pb2.Person.FromString,
-            _registered_method=True,
-        )
+                '/solidpy_test.SolidPyTest/GetPerson',
+                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__test__pb2.Person.FromString,
+                _registered_method=True)
         self.GetOrganization = channel.unary_unary(
-            "/solidpy_test.SolidPyTest/GetOrganization",
-            request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-            response_deserializer=solidpy__test__pb2.Organization.FromString,
-            _registered_method=True,
-        )
+                '/solidpy_test.SolidPyTest/GetOrganization',
+                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__test__pb2.Organization.FromString,
+                _registered_method=True)
         self.GetParty = channel.unary_unary(
-            "/solidpy_test.SolidPyTest/GetParty",
-            request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-            response_deserializer=solidpy__test__pb2.Party.FromString,
-            _registered_method=True,
-        )
+                '/solidpy_test.SolidPyTest/GetParty',
+                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__test__pb2.Party.FromString,
+                _registered_method=True)
         self.CreateParty = channel.unary_unary(
-            "/solidpy_test.SolidPyTest/CreateParty",
-            request_serializer=solidpy__test__pb2.CreatePartyRequest.SerializeToString,
-            response_deserializer=solidpy__test__pb2.BasicID.FromString,
-            _registered_method=True,
-        )
+                '/solidpy_test.SolidPyTest/CreateParty',
+                request_serializer=solidpy__test__pb2.CreatePartyRequest.SerializeToString,
+                response_deserializer=solidpy__test__pb2.BasicID.FromString,
+                _registered_method=True)
         self.DeleteParty = channel.unary_unary(
-            "/solidpy_test.SolidPyTest/DeleteParty",
-            request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-            response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            _registered_method=True,
-        )
+                '/solidpy_test.SolidPyTest/DeleteParty',
+                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class SolidPyTestServicer(object):
@@ -81,92 +73,87 @@ class SolidPyTestServicer(object):
     def GetPerson(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def GetOrganization(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def GetParty(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def CreateParty(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def DeleteParty(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details("Method not implemented!")
-        raise NotImplementedError("Method not implemented!")
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_SolidPyTestServicer_to_server(servicer, server):
     rpc_method_handlers = {
-        "GetPerson": grpc.unary_unary_rpc_method_handler(
-            servicer.GetPerson,
-            request_deserializer=solidpy__test__pb2.BasicID.FromString,
-            response_serializer=solidpy__test__pb2.Person.SerializeToString,
-        ),
-        "GetOrganization": grpc.unary_unary_rpc_method_handler(
-            servicer.GetOrganization,
-            request_deserializer=solidpy__test__pb2.BasicID.FromString,
-            response_serializer=solidpy__test__pb2.Organization.SerializeToString,
-        ),
-        "GetParty": grpc.unary_unary_rpc_method_handler(
-            servicer.GetParty,
-            request_deserializer=solidpy__test__pb2.BasicID.FromString,
-            response_serializer=solidpy__test__pb2.Party.SerializeToString,
-        ),
-        "CreateParty": grpc.unary_unary_rpc_method_handler(
-            servicer.CreateParty,
-            request_deserializer=solidpy__test__pb2.CreatePartyRequest.FromString,
-            response_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-        ),
-        "DeleteParty": grpc.unary_unary_rpc_method_handler(
-            servicer.DeleteParty,
-            request_deserializer=solidpy__test__pb2.BasicID.FromString,
-            response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-        ),
+            'GetPerson': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPerson,
+                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__test__pb2.Person.SerializeToString,
+            ),
+            'GetOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrganization,
+                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__test__pb2.Organization.SerializeToString,
+            ),
+            'GetParty': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetParty,
+                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__test__pb2.Party.SerializeToString,
+            ),
+            'CreateParty': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateParty,
+                    request_deserializer=solidpy__test__pb2.CreatePartyRequest.FromString,
+                    response_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+            ),
+            'DeleteParty': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteParty,
+                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-        "solidpy_test.SolidPyTest", rpc_method_handlers
-    )
+            'solidpy_test.SolidPyTest', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers(
-        "solidpy_test.SolidPyTest", rpc_method_handlers
-    )
+    server.add_registered_method_handlers('solidpy_test.SolidPyTest', rpc_method_handlers)
 
 
-# This class is part of an EXPERIMENTAL API.
+ # This class is part of an EXPERIMENTAL API.
 class SolidPyTest(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetPerson(
-        request,
-        target,
-        options=(),
-        channel_credentials=None,
-        call_credentials=None,
-        insecure=False,
-        compression=None,
-        wait_for_ready=None,
-        timeout=None,
-        metadata=None,
-    ):
+    def GetPerson(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/solidpy_test.SolidPyTest/GetPerson",
+            '/solidpy_test.SolidPyTest/GetPerson',
             solidpy__test__pb2.BasicID.SerializeToString,
             solidpy__test__pb2.Person.FromString,
             options,
@@ -177,26 +164,23 @@ class SolidPyTest(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True,
-        )
+            _registered_method=True)
 
     @staticmethod
-    def GetOrganization(
-        request,
-        target,
-        options=(),
-        channel_credentials=None,
-        call_credentials=None,
-        insecure=False,
-        compression=None,
-        wait_for_ready=None,
-        timeout=None,
-        metadata=None,
-    ):
+    def GetOrganization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/solidpy_test.SolidPyTest/GetOrganization",
+            '/solidpy_test.SolidPyTest/GetOrganization',
             solidpy__test__pb2.BasicID.SerializeToString,
             solidpy__test__pb2.Organization.FromString,
             options,
@@ -207,26 +191,23 @@ class SolidPyTest(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True,
-        )
+            _registered_method=True)
 
     @staticmethod
-    def GetParty(
-        request,
-        target,
-        options=(),
-        channel_credentials=None,
-        call_credentials=None,
-        insecure=False,
-        compression=None,
-        wait_for_ready=None,
-        timeout=None,
-        metadata=None,
-    ):
+    def GetParty(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/solidpy_test.SolidPyTest/GetParty",
+            '/solidpy_test.SolidPyTest/GetParty',
             solidpy__test__pb2.BasicID.SerializeToString,
             solidpy__test__pb2.Party.FromString,
             options,
@@ -237,26 +218,23 @@ class SolidPyTest(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True,
-        )
+            _registered_method=True)
 
     @staticmethod
-    def CreateParty(
-        request,
-        target,
-        options=(),
-        channel_credentials=None,
-        call_credentials=None,
-        insecure=False,
-        compression=None,
-        wait_for_ready=None,
-        timeout=None,
-        metadata=None,
-    ):
+    def CreateParty(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/solidpy_test.SolidPyTest/CreateParty",
+            '/solidpy_test.SolidPyTest/CreateParty',
             solidpy__test__pb2.CreatePartyRequest.SerializeToString,
             solidpy__test__pb2.BasicID.FromString,
             options,
@@ -267,26 +245,23 @@ class SolidPyTest(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True,
-        )
+            _registered_method=True)
 
     @staticmethod
-    def DeleteParty(
-        request,
-        target,
-        options=(),
-        channel_credentials=None,
-        call_credentials=None,
-        insecure=False,
-        compression=None,
-        wait_for_ready=None,
-        timeout=None,
-        metadata=None,
-    ):
+    def DeleteParty(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
         return grpc.experimental.unary_unary(
             request,
             target,
-            "/solidpy_test.SolidPyTest/DeleteParty",
+            '/solidpy_test.SolidPyTest/DeleteParty',
             solidpy__test__pb2.BasicID.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
@@ -297,5 +272,4 @@ class SolidPyTest(object):
             wait_for_ready,
             timeout,
             metadata,
-            _registered_method=True,
-        )
+            _registered_method=True)

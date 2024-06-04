@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "solidpy_proto"
-version = "0.0.1"
+version = "0.0.2"
 description = "Base Template for SolidPy.proto_registry"
 authors = [ "Craig Holland <craig_holland@hotmail.com>",]
 readme = "README.md"
@@ -46,7 +46,3 @@ certifi = "2024.2.2"
 rapidfuzz = "3.9.1"
 requests = "2.32.2"
 pkginfo = "1.10.0"
-
-[tool.poetry.dependencies.common-core]
-version = "0.2.0"
-source = "pypi-gcp"

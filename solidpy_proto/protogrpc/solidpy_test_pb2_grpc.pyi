@@ -13,19 +13,13 @@ import typing
 
 _T = typing.TypeVar("_T")
 
-class _MaybeAsyncIterator(
-    collections.abc.AsyncIterator[_T],
-    collections.abc.Iterator[_T],
-    metaclass=abc.ABCMeta,
-): ...
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
 class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
 class SolidPyTestStub:
-    def __init__(
-        self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]
-    ) -> None: ...
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     GetPerson: grpc.UnaryUnaryMultiCallable[
         solidpy_test_pb2.BasicID,
         solidpy_test_pb2.Person,
@@ -83,48 +77,34 @@ class SolidPyTestServicer(metaclass=abc.ABCMeta):
         self,
         request: solidpy_test_pb2.BasicID,
         context: _ServicerContext,
-    ) -> typing.Union[
-        solidpy_test_pb2.Person,
-        collections.abc.Awaitable[solidpy_test_pb2.Person],
-    ]: ...
+    ) -> typing.Union[solidpy_test_pb2.Person, collections.abc.Awaitable[solidpy_test_pb2.Person]]: ...
+
     @abc.abstractmethod
     def GetOrganization(
         self,
         request: solidpy_test_pb2.BasicID,
         context: _ServicerContext,
-    ) -> typing.Union[
-        solidpy_test_pb2.Organization,
-        collections.abc.Awaitable[solidpy_test_pb2.Organization],
-    ]: ...
+    ) -> typing.Union[solidpy_test_pb2.Organization, collections.abc.Awaitable[solidpy_test_pb2.Organization]]: ...
+
     @abc.abstractmethod
     def GetParty(
         self,
         request: solidpy_test_pb2.BasicID,
         context: _ServicerContext,
-    ) -> typing.Union[
-        solidpy_test_pb2.Party,
-        collections.abc.Awaitable[solidpy_test_pb2.Party],
-    ]: ...
+    ) -> typing.Union[solidpy_test_pb2.Party, collections.abc.Awaitable[solidpy_test_pb2.Party]]: ...
+
     @abc.abstractmethod
     def CreateParty(
         self,
         request: solidpy_test_pb2.CreatePartyRequest,
         context: _ServicerContext,
-    ) -> typing.Union[
-        solidpy_test_pb2.BasicID,
-        collections.abc.Awaitable[solidpy_test_pb2.BasicID],
-    ]: ...
+    ) -> typing.Union[solidpy_test_pb2.BasicID, collections.abc.Awaitable[solidpy_test_pb2.BasicID]]: ...
+
     @abc.abstractmethod
     def DeleteParty(
         self,
         request: solidpy_test_pb2.BasicID,
         context: _ServicerContext,
-    ) -> typing.Union[
-        google.protobuf.empty_pb2.Empty,
-        collections.abc.Awaitable[google.protobuf.empty_pb2.Empty],
-    ]: ...
+    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]: ...
 
-def add_SolidPyTestServicer_to_server(
-    servicer: SolidPyTestServicer,
-    server: typing.Union[grpc.Server, grpc.aio.Server],
-) -> None: ...
+def add_SolidPyTestServicer_to_server(servicer: SolidPyTestServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

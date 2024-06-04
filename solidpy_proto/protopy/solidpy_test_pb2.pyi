@@ -22,12 +22,7 @@ class _PartyType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
 
-class _PartyTypeEnumTypeWrapper(
-    google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[
-        _PartyType.ValueType
-    ],
-    builtins.type,
-):
+class _PartyTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PartyType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     PT_NONE: _PartyType.ValueType  # 0
     PT_PERSON: _PartyType.ValueType  # 1
@@ -71,31 +66,9 @@ class CreatePartyRequest(google.protobuf.message.Message):
         person: global___Person | None = ...,
         organization: global___Organization | None = ...,
     ) -> None: ...
-    def HasField(
-        self,
-        field_name: typing.Literal[
-            "organization",
-            b"organization",
-            "party",
-            b"party",
-            "person",
-            b"person",
-        ],
-    ) -> builtins.bool: ...
-    def ClearField(
-        self,
-        field_name: typing.Literal[
-            "organization",
-            b"organization",
-            "party",
-            b"party",
-            "person",
-            b"person",
-        ],
-    ) -> None: ...
-    def WhichOneof(
-        self, oneof_group: typing.Literal["party", b"party"]
-    ) -> typing.Literal["person", "organization"] | None: ...
+    def HasField(self, field_name: typing.Literal["organization", b"organization", "party", b"party", "person", b"person"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["organization", b"organization", "party", b"party", "person", b"person"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["party", b"party"]) -> typing.Literal["person", "organization"] | None: ...
 
 global___CreatePartyRequest = CreatePartyRequest
 
@@ -123,24 +96,8 @@ class Person(google.protobuf.message.Message):
         last_name: builtins.str = ...,
         date_of_birth: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(
-        self, field_name: typing.Literal["date_of_birth", b"date_of_birth"]
-    ) -> builtins.bool: ...
-    def ClearField(
-        self,
-        field_name: typing.Literal[
-            "date_of_birth",
-            b"date_of_birth",
-            "first_name",
-            b"first_name",
-            "id",
-            b"id",
-            "last_name",
-            b"last_name",
-            "middle_name",
-            b"middle_name",
-        ],
-    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["date_of_birth", b"date_of_birth"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["date_of_birth", b"date_of_birth", "first_name", b"first_name", "id", b"id", "last_name", b"last_name", "middle_name", b"middle_name"]) -> None: ...
 
 global___Person = Person
 
@@ -159,15 +116,8 @@ class Organization(google.protobuf.message.Message):
         id: builtins.str = ...,
         admin_contact: global___Person | None = ...,
     ) -> None: ...
-    def HasField(
-        self, field_name: typing.Literal["admin_contact", b"admin_contact"]
-    ) -> builtins.bool: ...
-    def ClearField(
-        self,
-        field_name: typing.Literal[
-            "admin_contact", b"admin_contact", "id", b"id"
-        ],
-    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["admin_contact", b"admin_contact"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["admin_contact", b"admin_contact", "id", b"id"]) -> None: ...
 
 global___Organization = Organization
 
@@ -190,32 +140,8 @@ class Party(google.protobuf.message.Message):
         person: global___Person | None = ...,
         organization: global___Organization | None = ...,
     ) -> None: ...
-    def HasField(
-        self,
-        field_name: typing.Literal[
-            "organization",
-            b"organization",
-            "party",
-            b"party",
-            "person",
-            b"person",
-        ],
-    ) -> builtins.bool: ...
-    def ClearField(
-        self,
-        field_name: typing.Literal[
-            "id",
-            b"id",
-            "organization",
-            b"organization",
-            "party",
-            b"party",
-            "person",
-            b"person",
-        ],
-    ) -> None: ...
-    def WhichOneof(
-        self, oneof_group: typing.Literal["party", b"party"]
-    ) -> typing.Literal["person", "organization"] | None: ...
+    def HasField(self, field_name: typing.Literal["organization", b"organization", "party", b"party", "person", b"person"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "organization", b"organization", "party", b"party", "person", b"person"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["party", b"party"]) -> typing.Literal["person", "organization"] | None: ...
 
 global___Party = Party
