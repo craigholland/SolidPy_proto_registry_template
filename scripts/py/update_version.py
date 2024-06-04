@@ -3,7 +3,7 @@ import toml
 
 
 def get_latest_version():
-    with open("../../CHANGELOG.md", "r") as changelog:
+    with open("CHANGELOG.md", "r") as changelog:
         content = changelog.read()
 
     # Use regex to find the version numbers
@@ -17,12 +17,12 @@ def get_latest_version():
 
 
 def update_pyproject_toml(version):
-    with open("../../pyproject.toml", "r") as f:
+    with open("pyproject.toml", "r") as f:
         pyproject = toml.load(f)
 
     pyproject['tool']['poetry']['version'] = version
 
-    with open("../../pyproject.toml", "w") as f:
+    with open("pyproject.toml", "w") as f:
         toml.dump(pyproject, f)
 
 

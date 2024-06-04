@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+package solidpy_test;
+
+service SolidPyTest {
+  rpc GetPerson(BasicID) returns (Person);
+  rpc GetOrganization(BasicID) returns (Organization);
+  rpc GetParty(BasicID) returns (Party);
+  rpc CreateParty(CreatePartyRequest) returns (BasicID);
+  rpc DeleteParty(BasicID) returns (google.protobuf.Empty);
+}
+
+message BasicID {
+  string id = 1;
+}
+
+enum PartyType {
+  PT_NONE = 0;
+  PT_PERSON = 1;
+  PT_ORGANIZATION = 2;
+}
+
+message CreatePartyRequest{
+  oneof party {
+    Person person = 1;
+    Organization organization = 2;
+  }
+}
+
+message Person {
+  string id = 1;
+  string first_name = 2;
+  string middle_name = 3;
+  string last_name = 4;
+  google.protobuf.Timestamp date_of_birth = 5;
+}
+
+message Organization {
+  string id = 1;
+  Person admin_contact = 2;
+}
+
+message Party {
+  string id = 1;
+  oneof party {
+    Person person = 2;
+    Organization organization = 3;
+  }
+}

@@ -1,22 +1,17 @@
-# Search and replace the following variables with the appropriate values:
-# *APP_NAME*                :   ex: solidpy_domain
-# *SUBMODULE_TYPE*          :   ex: Domain
-# *COMMON_CORE_VERSION*     :   ex: 0.1.0
-
+[build-system]
+requires = [ "poetry-core",]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = ["*APP_NAME*"]
+name = "solidpy_proto"
 version = "0.0.1"
-description = ["Base Template for SolidPy.*SUBMODULE_TYPE*"]
-authors = ["Craig Holland <craig_holland@hotmail.com>"]
+description = "Base Template for SolidPy.proto_registry"
+authors = [ "Craig Holland <craig_holland@hotmail.com>",]
 readme = "README.md"
-
-
 [[tool.poetry.source]]
 name = "pypi-gcp"
 url = "https://us-west1-python.pkg.dev/cholland-form/pypi-gcp/simple"
-priority = 'supplemental'
-
+priority = "supplemental"
 
 [tool.black]
 line-length = 79
@@ -29,9 +24,11 @@ profile = "black"
 line_length = 79
 skip_gitignore = true
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry-grpc-plugin]
+proto_path = "solidpy_proto"
+python_out = "solidpy_proto/protopy"
+grpc_python_out = "solidpy_proto/protogrpc"
+venv_proto_paths = [ "google/type",]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -43,4 +40,13 @@ pytest = "^8.2.0"
 tox = "^4.15.0"
 pre-commit = "^3.7.1"
 pycparser = "2.22"
-common-core = {version = ["*COMMON_CORE_VERSION*"], source = "pypi-gcp"}
+protobuf = "^5.27.0"
+poetry-grpc-plugin = "^0.1.9"
+certifi = "2024.2.2"
+rapidfuzz = "3.9.1"
+requests = "2.32.2"
+pkginfo = "1.10.0"
+
+[tool.poetry.dependencies.common-core]
+version = "0.2.0"
+source = "pypi-gcp"

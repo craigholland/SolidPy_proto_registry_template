@@ -1,5 +1,5 @@
-# solidpy submodule template
-base structure for SolidPy python submodules
+# solidpy proto registry template
+base structure for SolidPy proto registries
 
 # Contains:
 - `scripts/` directory for parent bash/python scripts
@@ -8,6 +8,12 @@ base structure for SolidPy python submodules
 - `pyproject.toml` file for submodule-specific project settings. __NOTE__: This is a template file with __\*placeholders\*__ that need to be substituted with actual values
 - pre-populated dependencies in the toml's `dependencies` section
 - various git/flake files and preset settings in the toml's `tool` section
+
+# Proto Registry Usage
+- Add proto files to `proto/` directory
+- Run `poetry protoc` to compile proto files
+- Generated Python files will be placed in `solidpy_proto/protopy` directory
+- Generated GRPC files will be placed in `solidpy_proto/protogrpc` directory
 
 # Basic Setup and Usage
 - Configure Poetry Auth to use GCP Artifact Registry:
