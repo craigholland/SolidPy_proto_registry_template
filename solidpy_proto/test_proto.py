@@ -1,2 +1,2 @@
-def fake_test():
+def test_faketest():
     assert True
