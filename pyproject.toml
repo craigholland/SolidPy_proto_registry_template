@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "solidpy_proto"
-version = "0.0.2"
+version = "0.0.3"
 description = "Base Template for SolidPy.proto_registry"
 authors = [ "Craig Holland <craig_holland@hotmail.com>",]
 readme = "README.md"
@@ -25,9 +25,9 @@ line_length = 79
 skip_gitignore = true
 
 [tool.poetry-grpc-plugin]
-proto_path = "solidpy_proto"
-python_out = "solidpy_proto/protopy"
-grpc_python_out = "solidpy_proto/protogrpc"
+proto_path = "."
+python_out = "."
+grpc_python_out = "."
 venv_proto_paths = [ "google/type",]
 
 [tool.poetry.dependencies]
@@ -46,3 +46,4 @@ certifi = "2024.2.2"
 rapidfuzz = "3.9.1"
 requests = "2.32.2"
 pkginfo = "1.10.0"
+google-api-python-client = "^2.132.0"

@@ -4,7 +4,7 @@ import grpc
 import warnings
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import solidpy_test_pb2 as solidpy__test__pb2
+from solidpy_proto import solidpy_test_pb2 as solidpy__proto_dot_solidpy__test__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
@@ -21,7 +21,7 @@ except ImportError:
 if _version_not_supported:
     warnings.warn(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in solidpy_test_pb2_grpc.py depends on'
+        + f' but the generated code in solidpy_proto/solidpy_test_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -42,27 +42,27 @@ class SolidPyTestStub(object):
         """
         self.GetPerson = channel.unary_unary(
                 '/solidpy_test.SolidPyTest/GetPerson',
-                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-                response_deserializer=solidpy__test__pb2.Person.FromString,
+                request_serializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__proto_dot_solidpy__test__pb2.Person.FromString,
                 _registered_method=True)
         self.GetOrganization = channel.unary_unary(
                 '/solidpy_test.SolidPyTest/GetOrganization',
-                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-                response_deserializer=solidpy__test__pb2.Organization.FromString,
+                request_serializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__proto_dot_solidpy__test__pb2.Organization.FromString,
                 _registered_method=True)
         self.GetParty = channel.unary_unary(
                 '/solidpy_test.SolidPyTest/GetParty',
-                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
-                response_deserializer=solidpy__test__pb2.Party.FromString,
+                request_serializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+                response_deserializer=solidpy__proto_dot_solidpy__test__pb2.Party.FromString,
                 _registered_method=True)
         self.CreateParty = channel.unary_unary(
                 '/solidpy_test.SolidPyTest/CreateParty',
-                request_serializer=solidpy__test__pb2.CreatePartyRequest.SerializeToString,
-                response_deserializer=solidpy__test__pb2.BasicID.FromString,
+                request_serializer=solidpy__proto_dot_solidpy__test__pb2.CreatePartyRequest.SerializeToString,
+                response_deserializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
                 _registered_method=True)
         self.DeleteParty = channel.unary_unary(
                 '/solidpy_test.SolidPyTest/DeleteParty',
-                request_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                request_serializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
@@ -105,27 +105,27 @@ def add_SolidPyTestServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetPerson': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPerson,
-                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
-                    response_serializer=solidpy__test__pb2.Person.SerializeToString,
+                    request_deserializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__proto_dot_solidpy__test__pb2.Person.SerializeToString,
             ),
             'GetOrganization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetOrganization,
-                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
-                    response_serializer=solidpy__test__pb2.Organization.SerializeToString,
+                    request_deserializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__proto_dot_solidpy__test__pb2.Organization.SerializeToString,
             ),
             'GetParty': grpc.unary_unary_rpc_method_handler(
                     servicer.GetParty,
-                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
-                    response_serializer=solidpy__test__pb2.Party.SerializeToString,
+                    request_deserializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
+                    response_serializer=solidpy__proto_dot_solidpy__test__pb2.Party.SerializeToString,
             ),
             'CreateParty': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateParty,
-                    request_deserializer=solidpy__test__pb2.CreatePartyRequest.FromString,
-                    response_serializer=solidpy__test__pb2.BasicID.SerializeToString,
+                    request_deserializer=solidpy__proto_dot_solidpy__test__pb2.CreatePartyRequest.FromString,
+                    response_serializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
             ),
             'DeleteParty': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteParty,
-                    request_deserializer=solidpy__test__pb2.BasicID.FromString,
+                    request_deserializer=solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -154,8 +154,8 @@ class SolidPyTest(object):
             request,
             target,
             '/solidpy_test.SolidPyTest/GetPerson',
-            solidpy__test__pb2.BasicID.SerializeToString,
-            solidpy__test__pb2.Person.FromString,
+            solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+            solidpy__proto_dot_solidpy__test__pb2.Person.FromString,
             options,
             channel_credentials,
             insecure,
@@ -181,8 +181,8 @@ class SolidPyTest(object):
             request,
             target,
             '/solidpy_test.SolidPyTest/GetOrganization',
-            solidpy__test__pb2.BasicID.SerializeToString,
-            solidpy__test__pb2.Organization.FromString,
+            solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+            solidpy__proto_dot_solidpy__test__pb2.Organization.FromString,
             options,
             channel_credentials,
             insecure,
@@ -208,8 +208,8 @@ class SolidPyTest(object):
             request,
             target,
             '/solidpy_test.SolidPyTest/GetParty',
-            solidpy__test__pb2.BasicID.SerializeToString,
-            solidpy__test__pb2.Party.FromString,
+            solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
+            solidpy__proto_dot_solidpy__test__pb2.Party.FromString,
             options,
             channel_credentials,
             insecure,
@@ -235,8 +235,8 @@ class SolidPyTest(object):
             request,
             target,
             '/solidpy_test.SolidPyTest/CreateParty',
-            solidpy__test__pb2.CreatePartyRequest.SerializeToString,
-            solidpy__test__pb2.BasicID.FromString,
+            solidpy__proto_dot_solidpy__test__pb2.CreatePartyRequest.SerializeToString,
+            solidpy__proto_dot_solidpy__test__pb2.BasicID.FromString,
             options,
             channel_credentials,
             insecure,
@@ -262,7 +262,7 @@ class SolidPyTest(object):
             request,
             target,
             '/solidpy_test.SolidPyTest/DeleteParty',
-            solidpy__test__pb2.BasicID.SerializeToString,
+            solidpy__proto_dot_solidpy__test__pb2.BasicID.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
